@@ -7,18 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00501CBD2C8F1A8E00A048AC /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CBC2C8F1A8E00A048AC /* TabViews.swift */; };
+		00501CBF2C8F1AD400A048AC /* Resturants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CBE2C8F1AD400A048AC /* Resturants.swift */; };
+		00501CC12C8F1ADF00A048AC /* Charities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CC02C8F1ADF00A048AC /* Charities.swift */; };
+		00501CC32C8F1AEF00A048AC /* AllServies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CC22C8F1AEF00A048AC /* AllServies.swift */; };
+		00501CC52C8F1B0300A048AC /* ClubRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CC42C8F1B0300A048AC /* ClubRewards.swift */; };
+		00501CC72C8F1B0D00A048AC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CC62C8F1B0D00A048AC /* Account.swift */; };
+		00501CE62C8F37A900A048AC /* ResturantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE52C8F37A900A048AC /* ResturantView.swift */; };
+		00501CE82C8F48FB00A048AC /* headerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE72C8F48FB00A048AC /* headerSection.swift */; };
+		00501CEB2C8F7ACE00A048AC /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CEA2C8F7ACE00A048AC /* SignIn.swift */; };
 		00EF9B532C8E3FAD00200ACB /* SnoonuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */; };
-		00EF9B552C8E3FAD00200ACB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B542C8E3FAD00200ACB /* ContentView.swift */; };
+		00EF9B552C8E3FAD00200ACB /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */; };
 		00EF9B572C8E3FAE00200ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EF9B562C8E3FAE00200ACB /* Assets.xcassets */; };
 		00EF9B5A2C8E3FAE00200ACB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EF9B592C8E3FAE00200ACB /* Preview Assets.xcassets */; };
+		00EF9B612C8E49CD00200ACB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B602C8E49CD00200ACB /* LocationView.swift */; };
+		00EF9B662C8E537D00200ACB /* CorenerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B652C8E537D00200ACB /* CorenerRadius.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00501CBC2C8F1A8E00A048AC /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		00501CBE2C8F1AD400A048AC /* Resturants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturants.swift; sourceTree = "<group>"; };
+		00501CC02C8F1ADF00A048AC /* Charities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charities.swift; sourceTree = "<group>"; };
+		00501CC22C8F1AEF00A048AC /* AllServies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllServies.swift; sourceTree = "<group>"; };
+		00501CC42C8F1B0300A048AC /* ClubRewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRewards.swift; sourceTree = "<group>"; };
+		00501CC62C8F1B0D00A048AC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		00501CE52C8F37A900A048AC /* ResturantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantView.swift; sourceTree = "<group>"; };
+		00501CE72C8F48FB00A048AC /* headerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerSection.swift; sourceTree = "<group>"; };
+		00501CEA2C8F7ACE00A048AC /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		00EF9B4F2C8E3FAD00200ACB /* Snoonu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoonu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoonuApp.swift; sourceTree = "<group>"; };
-		00EF9B542C8E3FAD00200ACB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreen.swift; sourceTree = "<group>"; };
 		00EF9B562C8E3FAE00200ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00EF9B592C8E3FAE00200ACB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00EF9B602C8E49CD00200ACB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		00EF9B652C8E537D00200ACB /* CorenerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorenerRadius.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +54,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0009470C2C93034F00726A03 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				00501CBC2C8F1A8E00A048AC /* TabViews.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		00501CC82C8F208400A048AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00501CC92C8F20C900A048AC /* Onboarding */,
+				00501CE42C8F377600A048AC /* Components */,
+				0009470C2C93034F00726A03 /* General */,
+				00501CE92C8F7AB500A048AC /* SignIn */,
+				00501CBE2C8F1AD400A048AC /* Resturants.swift */,
+				00501CC02C8F1ADF00A048AC /* Charities.swift */,
+				00501CC22C8F1AEF00A048AC /* AllServies.swift */,
+				00501CC42C8F1B0300A048AC /* ClubRewards.swift */,
+				00501CC62C8F1B0D00A048AC /* Account.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00501CC92C8F20C900A048AC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */,
+				00EF9B602C8E49CD00200ACB /* LocationView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		00501CE42C8F377600A048AC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				00501CE52C8F37A900A048AC /* ResturantView.swift */,
+				00501CE72C8F48FB00A048AC /* headerSection.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		00501CE92C8F7AB500A048AC /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				00501CEA2C8F7ACE00A048AC /* SignIn.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		00EF9B462C8E3FAD00200ACB = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */,
-				00EF9B542C8E3FAD00200ACB /* ContentView.swift */,
+				00EF9B642C8E536300200ACB /* Extensions */,
+				00501CC82C8F208400A048AC /* Views */,
 				00EF9B562C8E3FAE00200ACB /* Assets.xcassets */,
 				00EF9B582C8E3FAE00200ACB /* Preview Content */,
 			);
@@ -65,6 +138,14 @@
 				00EF9B592C8E3FAE00200ACB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		00EF9B642C8E536300200ACB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				00EF9B652C8E537D00200ACB /* CorenerRadius.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +218,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EF9B552C8E3FAD00200ACB /* ContentView.swift in Sources */,
+				00501CBF2C8F1AD400A048AC /* Resturants.swift in Sources */,
+				00501CE62C8F37A900A048AC /* ResturantView.swift in Sources */,
+				00501CC72C8F1B0D00A048AC /* Account.swift in Sources */,
+				00501CC32C8F1AEF00A048AC /* AllServies.swift in Sources */,
+				00EF9B662C8E537D00200ACB /* CorenerRadius.swift in Sources */,
+				00501CC52C8F1B0300A048AC /* ClubRewards.swift in Sources */,
+				00501CBD2C8F1A8E00A048AC /* TabViews.swift in Sources */,
+				00EF9B552C8E3FAD00200ACB /* LunchScreen.swift in Sources */,
 				00EF9B532C8E3FAD00200ACB /* SnoonuApp.swift in Sources */,
+				00501CC12C8F1ADF00A048AC /* Charities.swift in Sources */,
+				00501CEB2C8F7ACE00A048AC /* SignIn.swift in Sources */,
+				00501CE82C8F48FB00A048AC /* headerSection.swift in Sources */,
+				00EF9B612C8E49CD00200ACB /* LocationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +289,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -254,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
