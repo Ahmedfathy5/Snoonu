@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct headerSection: View {
-    var sectionTitle: String
-    var seeMoreTitle: String
-    var showNew: Bool
+struct HeaderSection: View {
+   @State var sectionTitle: String
+   @State var seeMoreTitle: String
+   @State var showNew: Bool
+   @State var index: Int = 0
     var body: some View {
       
+       
         HStack(spacing: 10) {
             
             Text(sectionTitle)
@@ -38,9 +40,11 @@ struct headerSection: View {
                 }
            
         }
+        
+       
     }
 }
 
 #Preview {
-    headerSection(sectionTitle: "Service", seeMoreTitle: "See all",showNew: true)
+    HeaderSection(sectionTitle: "Service", seeMoreTitle: "See all", showNew: true)
 }

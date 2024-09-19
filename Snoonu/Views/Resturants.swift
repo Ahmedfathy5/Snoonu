@@ -12,8 +12,10 @@ struct Resturants: View {
     @State var index = 0
     @State var textField: String = ""
     let icons: [String] = [
-        "heart.fill", "globe", "house.fill", "person.fill","heart.fill", "globe", "house.fill", "person.fill"
+        "food5", "food6", "food7", "food8","food9"
     ]
+    @State private var currentIndex = 0
+    let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 0),
         GridItem(.flexible(), spacing: 0),
@@ -21,22 +23,25 @@ struct Resturants: View {
         GridItem(.flexible(), spacing: 0)
     ]
     var body: some View {
-        
-        ScrollView {
-            VStack {
-                adressOfUser
-                search
-                tabViewsPictures
-                resturantCategory
-                serviceResturants
-                bestLunch
-               foodDelivery
-                
+            ScrollView {
+                LazyVStack {
+                    adressOfUser
+                    search
+                    tabViewsPictures
+                    resturantCategory
+                    serviceResturants
+                    bestLunch
+                    foodDelivery
+                    foodDeliveryItem
+                    FoodCategory()
+                        .offset(y: -30)
+                  superSaverDeals
+                }
+                .padding(.horizontal, 3)
             }
-            .padding(.horizontal, 3)
+            .scrollIndicators(.hidden, axes: .vertical)
+            .toolbar(.hidden)
         }
-        .scrollIndicators(.hidden, axes: .vertical)
-    }
     //MARK: - Components of Views.
     private var adressOfUser: some View {
         VStack {
@@ -44,10 +49,10 @@ struct Resturants: View {
                 .font(.footnote)
                 .fontWeight(.medium)
                 .background(
-                Rectangle()
-                    .foregroundStyle(.gray.opacity(0.4))
-                    .frame(width: 52, height: 25)
-                    .cornerRadius(6, corners: [.topLeft,.topRight, .bottomLeft])
+                    Rectangle()
+                        .foregroundStyle(.gray.opacity(0.4))
+                        .frame(width: 52, height: 25)
+                        .cornerRadius(6, corners: [.topLeft,.topRight, .bottomLeft])
                 )
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 6)
@@ -87,23 +92,39 @@ struct Resturants: View {
         }
     }
     private var tabViewsPictures: some View {
-        VStack {
-            TabView {
-                ForEach(icons, id: \.self) { icon in
-                    Image(systemName: icon)
+        LazyVStack {
+            ZStack {
+                ForEach(0 ..< icons.count, id: \.self) { index in
+                    Image(icons[index])
                         .resizable()
-                        .scaledToFit()
-                        .padding(30)
+                        .frame(width: UIScreen.main.bounds.width - 20,height: 200)
+                        .offset(x: CGFloat(currentIndex == index ? 0 : (currentIndex > index ? -1 : 1)) * UIScreen.main.bounds.width)
+                        .cornerRadius(15)
+                        .animation(.easeInOut(duration: 0.5), value: currentIndex)
                 }
             }
-            .background( Color.red )
-            .frame(height: 150)
-            .cornerRadius(20)
-            .tabViewStyle(PageTabViewStyle())
+            
+            HStack {
+                ForEach(0 ..< icons.count, id: \.self) { index in
+                    Rectangle()
+                        .cornerRadius(15)
+                        .foregroundStyle(currentIndex == index ? .black : .gray.opacity(0.2))
+                        .frame(width: 45, height: 3)
+                        
+                        .animation(.easeInOut(duration: 0.5), value: currentIndex)
+                }
+            }
+            .padding(.top, 16)
         }
+        .onReceive(timer) { _ in
+            withAnimation {
+                currentIndex = (currentIndex + 1) % icons.count
+            }
+        }
+        
     }
     private var resturantCategory: some View {
-        VStack {
+        LazyVStack {
             LazyVGrid(columns: columns, alignment: .center, spacing: 0, content: {
                 ForEach(0 ..< 8) { _ in
                     ResturantView()
@@ -113,25 +134,27 @@ struct Resturants: View {
     }
     private var serviceResturants: some View {
         VStack(spacing: 0) {
-          headerSection(sectionTitle: "Services", seeMoreTitle: "See all", showNew: false)
+            HeaderSection(sectionTitle: "Services", seeMoreTitle: "See all", showNew: true)
+                .padding(.horizontal, 5)
             ScrollView(.horizontal) {
-                HStack {
+                LazyHStack {
                     ForEach(0 ..< 10) { int in
                         ResturantView()
                     }
                 }
-               
+                
             }
-         
+            
             .scrollIndicators(.hidden, axes: .horizontal)
         }
     }
     private var bestLunch: some View {
         VStack {
-            headerSection(sectionTitle: "Best Lunch", seeMoreTitle: "See all", showNew: true)
+            HeaderSection(sectionTitle: "Best Lunch", seeMoreTitle: "See all", showNew: false)
+                .padding(.horizontal, 5)
             ScrollView(.horizontal) {
                 
-                HStack {
+                LazyHStack {
                     ForEach(0 ..< 10) { Int in
                         Image(.food7)
                             .resizable()
@@ -148,14 +171,14 @@ struct Resturants: View {
                             )
                     }
                 }
-               
+                
             }
-           
+            
             .scrollIndicators(.hidden)
         }
     }
     private var foodDelivery: some View {
-        VStack {
+        LazyVStack {
             Text("Food")
                 .font(.title)
                 .bold()
@@ -192,7 +215,7 @@ struct Resturants: View {
                 .onTapGesture {
                     index = 1
                 }
-               
+                
                 HStack {
                     Image(systemName: "car.fill")
                     Text("Drive Thru")
@@ -214,6 +237,62 @@ struct Resturants: View {
             
         }
         
+    }
+    private var foodDeliveryItem: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(icons, id: \.self) { item in
+                    VStack(spacing: 4) {
+                        Image(.food3)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .cornerRadius(25)
+                        
+                        Text(item)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .frame(width: 75, height: 50)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2)
+                            .offset(y: -20)
+                    }
+                    
+                }
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+    private var superSaverDeals: some View {
+        VStack {
+            HStack {
+                Text("⚡️Super Saver Deals")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("See all")
+                    .font(.title3)
+                    .bold()
+                    .foregroundStyle(.snoonuBackground)
+            }
+            .padding(.horizontal, 5)
+            VStack(spacing: 12) {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(0 ..< 10) { item in
+                            ResturantDeals(width: 280, height: 120)
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+                ScrollView(.vertical) {
+                    ForEach(0 ..< 10) { item in
+                        ResturantDeals(width: 380, height: 120)
+                           
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct LunchScreen: View {
     @State var isScaled: Bool = true
     @State var showNextScreen: Bool = false
+    @State var showMessage: Bool = false
     var body: some View {
         Group {
             if showNextScreen {
@@ -30,27 +31,40 @@ struct LunchScreen: View {
                             .frame(maxHeight: .infinity)
                             .frame(alignment: .bottom)
                         Spacer()
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 220, height: 50)
-                                .foregroundColor(.white)
-                                .cornerRadius(20, corners: [ .topLeft,.topRight, .bottomRight])
-                            VStack {
-                                Text("Made in Qatar with love ❤️")
-                                    .fontWeight(.semibold)
-                                   
+                        if showMessage {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 220, height: 50)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(20, corners: [ .topLeft,.topRight, .bottomRight])
+                                VStack {
+                                    Text("Made in Qatar with love ❤️")
+                                        .fontWeight(.semibold)
+                                       
+                                }
                             }
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .transition(.asymmetric(
+                                insertion: .move(edge: .bottom),
+                                removal: AnyTransition.opacity.animation(.easeInOut)
+                            ))
                         }
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                       
+                        
                        
                     }
+                    
                 }
             }
                 
         }
         .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showMessage = true
+                }
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 withAnimation {
                     showNextScreen = true

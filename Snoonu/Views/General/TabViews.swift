@@ -60,7 +60,7 @@ struct TabViews: View {
             }
             .accentColor(.snoonuBackground)
             .fullScreenCover(isPresented: $showSignInScreen, content: {
-                SignIn( showSignInScreen: $showSignInScreen)
+                CreateAccount( showSignInScreen: $showSignInScreen)
             })
        
 

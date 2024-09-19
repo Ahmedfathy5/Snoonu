@@ -16,6 +16,7 @@ struct LocationView: View {
             ZStack {
                 if #available(iOS 17.0, *) {
                     Map() {
+                       
                         Marker("Developer's Home",systemImage: "building", coordinate: myHome)
                             .tint(.blue)
                     }
@@ -94,6 +95,7 @@ struct LocationView: View {
                 }
             }
         }
+        
      
     }
 }
