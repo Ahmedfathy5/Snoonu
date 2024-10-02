@@ -128,7 +128,7 @@ struct DeliveryArived: View {
 }
 
 #Preview {
-    VStack {
+    VStack(spacing: 60) {
         ResturantDeals(width: 370, height: 160)
         PrecentageView(precentage: 30, precentageShow: true)
         Favorite()

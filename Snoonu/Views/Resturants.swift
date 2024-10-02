@@ -15,6 +15,7 @@ struct Resturants: View {
         "food5", "food6", "food7", "food8","food9"
     ]
     @State private var currentIndex = 0
+    @StateObject var viewModel = ViewModel( dataModel: Resturant(meals: [Meals(mealName: "", mealImage: "")]))
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 0),
@@ -23,25 +24,29 @@ struct Resturants: View {
         GridItem(.flexible(), spacing: 0)
     ]
     var body: some View {
-            ScrollView {
-                LazyVStack {
-                    adressOfUser
-                    search
-                    tabViewsPictures
-                    resturantCategory
-                    serviceResturants
-                    bestLunch
-                    foodDelivery
-                    foodDeliveryItem
-                    FoodCategory()
-                        .offset(y: -30)
-                  superSaverDeals
-                }
-                .padding(.horizontal, 3)
+        ScrollView {
+            LazyVStack {
+                adressOfUser
+                search
+                tabViewsPictures
+                resturantCategory
+                serviceResturants
+                bestLunch
+                foodDelivery
+                foodDeliveryItem
+                FoodCategory()
+                    .offset(y: -30)
+                superSaverDeals
             }
-            .scrollIndicators(.hidden, axes: .vertical)
-            .toolbar(.hidden)
+            .padding(.horizontal, 3)
+            .onAppear {
+                viewModel.fetchData()
+            }
         }
+        .scrollIndicators(.hidden, axes: .vertical)
+        .toolbar(.hidden)
+        
+    }
     //MARK: - Components of Views.
     private var adressOfUser: some View {
         VStack {
@@ -110,7 +115,7 @@ struct Resturants: View {
                         .cornerRadius(15)
                         .foregroundStyle(currentIndex == index ? .black : .gray.opacity(0.2))
                         .frame(width: 45, height: 3)
-                        
+                    
                         .animation(.easeInOut(duration: 0.5), value: currentIndex)
                 }
             }
@@ -126,8 +131,11 @@ struct Resturants: View {
     private var resturantCategory: some View {
         LazyVStack {
             LazyVGrid(columns: columns, alignment: .center, spacing: 0, content: {
-                ForEach(0 ..< 8) { _ in
-                    ResturantView()
+                ForEach(viewModel.dataModel.meals, id: \.self) { item in
+                    if let imageURL = URL(string: item.mealImage) {
+                        ResturantItem(name: item.mealName, url: imageURL)
+                    }
+                   
                 }
             })
         }
@@ -138,8 +146,10 @@ struct Resturants: View {
                 .padding(.horizontal, 5)
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(0 ..< 10) { int in
-                        ResturantView()
+                    ForEach(viewModel.dataModel.meals, id: \.self) { item in
+                        if let imageURL = URL(string: item.mealImage) {
+                            ResturantItem(name: item.mealName, url: imageURL)
+                        }
                     }
                 }
                 
@@ -153,16 +163,16 @@ struct Resturants: View {
             HeaderSection(sectionTitle: "Best Lunch", seeMoreTitle: "See all", showNew: false)
                 .padding(.horizontal, 5)
             ScrollView(.horizontal) {
-                
                 LazyHStack {
-                    ForEach(0 ..< 10) { Int in
+                    ForEach(viewModel.dataModel.meals, id: \.self) { item in
                         Image(.food7)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 150, height: 150)
                             .cornerRadius(15)
+                        
                             .overlay (
-                                Text("Burger")
+                                Text(item.mealName)
                                     .font(.title2)
                                     .bold()
                                     .foregroundStyle(.white)
@@ -171,9 +181,7 @@ struct Resturants: View {
                             )
                     }
                 }
-                
             }
-            
             .scrollIndicators(.hidden)
         }
     }
@@ -288,7 +296,7 @@ struct Resturants: View {
                 ScrollView(.vertical) {
                     ForEach(0 ..< 10) { item in
                         ResturantDeals(width: 380, height: 120)
-                           
+                        
                     }
                 }
             }
