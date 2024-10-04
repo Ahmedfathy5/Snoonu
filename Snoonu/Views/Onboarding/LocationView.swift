@@ -9,30 +9,29 @@ import SwiftUI
 import MapKit
 
 struct LocationView: View {
-   let myHome = CLLocationCoordinate2D(latitude: 31.07953, longitude: 31.40379)
+    let myHome = CLLocationCoordinate2D(latitude: 31.07953, longitude: 31.40379)
     @State var textField: String = ""
+    @EnvironmentObject private var coordinator: Coordinator
     var body: some View {
         NavigationStack {
             ZStack {
                 if #available(iOS 17.0, *) {
                     Map() {
-                       
                         Marker("Developer's Home",systemImage: "building", coordinate: myHome)
                             .tint(.blue)
                     }
-                        .ignoresSafeArea()
+                    .ignoresSafeArea()
                 } else {
-                   
+                    
                 }
-                
                 VStack(spacing: -400) {
                     Image(systemName: "location")
                         .font(.title)
                         .background(
-                        Rectangle()
-                            .frame(width: 60, height: 60)
-                            .foregroundStyle(.white)
-                            .cornerRadius(30)
+                            Rectangle()
+                                .frame(width: 60, height: 60)
+                                .foregroundStyle(.white)
+                                .cornerRadius(30)
                         )
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
@@ -63,40 +62,30 @@ struct LocationView: View {
                                             .padding()
                                             .foregroundStyle(.gray)
                                     }
-                                
-                                Button {
-                                    
+                                Button  {
+                                    coordinator.present(.createAccount)
                                 } label: {
-                                    NavigationLink {
-                                        TabViews()
-                                    } label: {
-                                       Text("Confirm location")
-                                            .font(.title3)
-                                            .bold()
-                                            .foregroundColor(.white)
-                                            .frame(width: 350, height: 50)
-                                            .background(
-                                                Color.snoonuBackground
-                                            )
-                                            .opacity(textField.isEmpty ? 0.4 : 1)
-                                            .cornerRadius(25)
+                                    Text("Confirm location")
+                                        .font(.title3)
+                                        .bold()
+                                        .foregroundColor(.white)
+                                        .frame(width: 350, height: 50)
+                                        .background( Color.snoonuBackground )
+                                        .opacity(textField.isEmpty ? 0.4 : 1)
+                                        .cornerRadius(25)
                                 }
-                                }
-
-                                
-                                
                             }
                             .offset(y: -15)
                         }
                         .frame(height: 200)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                         .ignoresSafeArea()
-                        
+                    
                 }
             }
         }
         
-     
+        
     }
 }
 

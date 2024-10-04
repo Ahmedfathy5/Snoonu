@@ -61,8 +61,7 @@ struct ResturantDeals: View {
                         }
                     }
                 }
-                
-            
+
         }
     }
 }

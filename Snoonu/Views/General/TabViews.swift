@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TabViews: View {
+    
     @State private var selectedTab: Int = 1
     @State private var showSignInScreen: Bool = false
+    @EnvironmentObject private var coordinator: Coordinator
+    
     var body: some View {
        
             TabView(selection: $selectedTab) {
@@ -22,26 +25,30 @@ struct TabViews: View {
                 Charities()
                     .tabItem {
                         Image(systemName: "window.awning")
-                        Text("Grocery") }
+                        Text("Grocery")
+                            
+                    }
                     .tag(2)
-                
-                
+                   
+                        
+                    
+                   
                 AllServies()
                      .tabItem {
                          Image(systemName: "square.grid.3x3.topleft.filled")
                          Text("All Service") }
                      .tag(3)
+                     .onAppear {
+                         
+                     }
                 
                 ClubRewards()
-                    
                     .tabItem {
                         Image(systemName: "banknote")
                         Text("Rewards Club") }
                     .tag(4)
                     .onAppear {
-                        if !showSignInScreen {
-                            showSignInScreen = true
-                        }
+                        
                     }
                 
                 Account()
@@ -51,17 +58,13 @@ struct TabViews: View {
                     }
                     .tag(5)
                     .onAppear{
-                        if !showSignInScreen {
-                            showSignInScreen = true
-                        }
+                     
                     }
                 
                 
             }
             .accentColor(.snoonuBackground)
-            .fullScreenCover(isPresented: $showSignInScreen, content: {
-                CreateAccount( showSignInScreen: $showSignInScreen)
-            })
+            
        
 
 

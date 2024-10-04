@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct LunchScreen: View {
+    
+    @EnvironmentObject private var coordinator: Coordinator
     @State var isScaled: Bool = true
     @State var showNextScreen: Bool = false
     @State var showMessage: Bool = false
+    
     var body: some View {
         Group {
             if showNextScreen {
@@ -24,7 +27,7 @@ struct LunchScreen: View {
                             .scaledToFit()
                             .frame(width: 200, height: 200)
                             .scaleEffect(isScaled ? 0.75 : 1.3)
-                            .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                            .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true), value: isScaled)
                             .onAppear {
                                 isScaled.toggle()
                             }
@@ -40,7 +43,6 @@ struct LunchScreen: View {
                                 VStack {
                                     Text("Made in Qatar with love ❤️")
                                         .fontWeight(.semibold)
-                                       
                                 }
                             }
                             .padding()
@@ -50,24 +52,21 @@ struct LunchScreen: View {
                                 removal: AnyTransition.opacity.animation(.easeInOut)
                             ))
                         }
-                        
-                       
                     }
-                    
                 }
             }
-                
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
-                    showMessage = true
+                    showMessage.toggle()
                 }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 withAnimation {
-                    showNextScreen = true
+                    showNextScreen.toggle()
+                    coordinator.push(page: .locationView)
                 }
             }
         }

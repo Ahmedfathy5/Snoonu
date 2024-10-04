@@ -22,6 +22,9 @@
 		00501CE62C8F37A900A048AC /* ResturantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE52C8F37A900A048AC /* ResturantItem.swift */; };
 		00501CE82C8F48FB00A048AC /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE72C8F48FB00A048AC /* HeaderSection.swift */; };
 		00501CEB2C8F7ACE00A048AC /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CEA2C8F7ACE00A048AC /* CreateAccount.swift */; };
+		007ACCC72CAEC107003DEF70 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ACCC62CAEC107003DEF70 /* Coordinator.swift */; };
+		007ACCC92CAEC2FC003DEF70 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ACCC82CAEC2FC003DEF70 /* CoordinatorView.swift */; };
+		007ACCCB2CAEE6BF003DEF70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ACCCA2CAEE6BF003DEF70 /* Page.swift */; };
 		00EF9B532C8E3FAD00200ACB /* SnoonuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */; };
 		00EF9B552C8E3FAD00200ACB /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */; };
 		00EF9B572C8E3FAE00200ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EF9B562C8E3FAE00200ACB /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		00501CE52C8F37A900A048AC /* ResturantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantItem.swift; sourceTree = "<group>"; };
 		00501CE72C8F48FB00A048AC /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
 		00501CEA2C8F7ACE00A048AC /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		007ACCC62CAEC107003DEF70 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		007ACCC82CAEC2FC003DEF70 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		007ACCCA2CAEE6BF003DEF70 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		00EF9B4F2C8E3FAD00200ACB /* Snoonu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoonu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoonuApp.swift; sourceTree = "<group>"; };
 		00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreen.swift; sourceTree = "<group>"; };
@@ -145,6 +151,16 @@
 			path = CreateAccount;
 			sourceTree = "<group>";
 		};
+		007ACCC52CAEC0B0003DEF70 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				007ACCCA2CAEE6BF003DEF70 /* Page.swift */,
+				007ACCC62CAEC107003DEF70 /* Coordinator.swift */,
+				007ACCC82CAEC2FC003DEF70 /* CoordinatorView.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		00EF9B462C8E3FAD00200ACB = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */,
+				007ACCC52CAEC0B0003DEF70 /* Coordinator */,
 				00EF9B642C8E536300200ACB /* Extensions */,
 				00F1DF082CA0852700810AE2 /* Utilities */,
 				0011A1402CA1819B00A7ECCF /* Model */,
@@ -285,12 +302,15 @@
 				0011A1472CA18DA800A7ECCF /* ViewModel.swift in Sources */,
 				00501CC12C8F1ADF00A048AC /* Charities.swift in Sources */,
 				0011A1492CA1D34E00A7ECCF /* ImageLoader.swift in Sources */,
+				007ACCCB2CAEE6BF003DEF70 /* Page.swift in Sources */,
 				00501CEB2C8F7ACE00A048AC /* CreateAccount.swift in Sources */,
 				0011A1422CA181E800A7ECCF /* Resturant.swift in Sources */,
 				004DFAC82C9B230400E722FC /* ResturantDeals.swift in Sources */,
 				004DFAC62C9B0D2A00E722FC /* FoodCategory.swift in Sources */,
 				00501CE82C8F48FB00A048AC /* HeaderSection.swift in Sources */,
+				007ACCC92CAEC2FC003DEF70 /* CoordinatorView.swift in Sources */,
 				00EF9B612C8E49CD00200ACB /* LocationView.swift in Sources */,
+				007ACCC72CAEC107003DEF70 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
