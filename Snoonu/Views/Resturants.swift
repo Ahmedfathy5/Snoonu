@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Resturants: View {
+    
     //MARK: - Properties.
     @State var index = 0
     @State var textField: String = ""
@@ -23,6 +24,7 @@ struct Resturants: View {
         GridItem(.flexible(), spacing: 0),
         GridItem(.flexible(), spacing: 0)
     ]
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -45,7 +47,6 @@ struct Resturants: View {
         }
         .scrollIndicators(.hidden, axes: .vertical)
         .toolbar(.hidden)
-        
     }
     //MARK: - Components of Views.
     private var adressOfUser: some View {

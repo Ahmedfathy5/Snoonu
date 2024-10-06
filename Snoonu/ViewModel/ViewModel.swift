@@ -22,10 +22,7 @@ class ViewModel: ObservableObject {
     }
     
     func fetchData()  {
-        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian") else {
-            return
-            
-        }
+        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian") else {  return  }
         apiManager.fetch(url: url)
             .decode(type: Resturant.self, decoder: JSONDecoder())
             .sink { completion in
@@ -55,5 +52,4 @@ class ViewModel: ObservableObject {
             }.resume()
         }
     }
-    
 }

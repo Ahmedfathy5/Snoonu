@@ -22,6 +22,7 @@
 		00501CE62C8F37A900A048AC /* ResturantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE52C8F37A900A048AC /* ResturantItem.swift */; };
 		00501CE82C8F48FB00A048AC /* HeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CE72C8F48FB00A048AC /* HeaderSection.swift */; };
 		00501CEB2C8F7ACE00A048AC /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CEA2C8F7ACE00A048AC /* CreateAccount.swift */; };
+		0054CBCC2CB3498D00077471 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0054CBCB2CB3498D00077471 /* Color.xcassets */; };
 		00EF9B532C8E3FAD00200ACB /* SnoonuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */; };
 		00EF9B552C8E3FAD00200ACB /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */; };
 		00EF9B572C8E3FAE00200ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EF9B562C8E3FAE00200ACB /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		00EF9B612C8E49CD00200ACB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B602C8E49CD00200ACB /* LocationView.swift */; };
 		00EF9B662C8E537D00200ACB /* CorenerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B652C8E537D00200ACB /* CorenerRadius.swift */; };
 		00F1DF0A2CA0854200810AE2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1DF092CA0854200810AE2 /* NetworkManager.swift */; };
+		00F792F02CB05007006A879C /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 00F792EF2CB05007006A879C /* SwiftfulRouting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,7 @@
 		00501CE52C8F37A900A048AC /* ResturantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantItem.swift; sourceTree = "<group>"; };
 		00501CE72C8F48FB00A048AC /* HeaderSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSection.swift; sourceTree = "<group>"; };
 		00501CEA2C8F7ACE00A048AC /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		0054CBCB2CB3498D00077471 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		00EF9B4F2C8E3FAD00200ACB /* Snoonu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snoonu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EF9B522C8E3FAD00200ACB /* SnoonuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoonuApp.swift; sourceTree = "<group>"; };
 		00EF9B542C8E3FAD00200ACB /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreen.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		00EF9B602C8E49CD00200ACB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		00EF9B652C8E537D00200ACB /* CorenerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorenerRadius.swift; sourceTree = "<group>"; };
 		00F1DF092CA0854200810AE2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		00F792ED2CB04F9E006A879C /* SwiftfulRouting-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SwiftfulRouting-main"; path = "../../../../Downloads/SwiftfulRouting-main"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F792F02CB05007006A879C /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				00EF9B562C8E3FAE00200ACB /* Assets.xcassets */,
+				0054CBCB2CB3498D00077471 /* Color.xcassets */,
 			);
 			path = Recources;
 			sourceTree = "<group>";
@@ -105,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				00501CC92C8F20C900A048AC /* Onboarding */,
-				00501CE42C8F377600A048AC /* Components */,
+				00501CE42C8F377600A048AC /* ReuseableView */,
 				0009470C2C93034F00726A03 /* General */,
 				00501CE92C8F7AB500A048AC /* CreateAccount */,
 				00501CBE2C8F1AD400A048AC /* Resturants.swift */,
@@ -126,7 +132,7 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		00501CE42C8F377600A048AC /* Components */ = {
+		00501CE42C8F377600A048AC /* ReuseableView */ = {
 			isa = PBXGroup;
 			children = (
 				00501CE52C8F37A900A048AC /* ResturantItem.swift */,
@@ -134,7 +140,7 @@
 				004DFAC52C9B0D2A00E722FC /* FoodCategory.swift */,
 				004DFAC72C9B230400E722FC /* ResturantDeals.swift */,
 			);
-			path = Components;
+			path = ReuseableView;
 			sourceTree = "<group>";
 		};
 		00501CE92C8F7AB500A048AC /* CreateAccount */ = {
@@ -150,6 +156,7 @@
 			children = (
 				00EF9B512C8E3FAD00200ACB /* Snoonu */,
 				00EF9B502C8E3FAD00200ACB /* Products */,
+				00F792EE2CB05007006A879C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +186,7 @@
 		00EF9B582C8E3FAE00200ACB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				00F792ED2CB04F9E006A879C /* SwiftfulRouting-main */,
 				00EF9B592C8E3FAE00200ACB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -201,6 +209,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		00F792EE2CB05007006A879C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,6 +232,9 @@
 			dependencies = (
 			);
 			name = Snoonu;
+			packageProductDependencies = (
+				00F792EF2CB05007006A879C /* SwiftfulRouting */,
+			);
 			productName = Snoonu;
 			productReference = 00EF9B4F2C8E3FAD00200ACB /* Snoonu.app */;
 			productType = "com.apple.product-type.application";
@@ -261,6 +279,7 @@
 			files = (
 				00EF9B5A2C8E3FAE00200ACB /* Preview Assets.xcassets in Resources */,
 				00EF9B572C8E3FAE00200ACB /* Assets.xcassets in Resources */,
+				0054CBCC2CB3498D00077471 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +513,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00F792EF2CB05007006A879C /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftfulRouting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00EF9B472C8E3FAD00200ACB /* Project object */;
 }

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LunchScreen: View {
+    
     @State var isScaled: Bool = true
     @State var showNextScreen: Bool = false
     @State var showMessage: Bool = false
+    
     var body: some View {
         Group {
             if showNextScreen {
@@ -24,7 +26,7 @@ struct LunchScreen: View {
                             .scaledToFit()
                             .frame(width: 200, height: 200)
                             .scaleEffect(isScaled ? 0.75 : 1.3)
-                            .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true))
+                            .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true), value: isScaled)
                             .onAppear {
                                 isScaled.toggle()
                             }
@@ -50,13 +52,9 @@ struct LunchScreen: View {
                                 removal: AnyTransition.opacity.animation(.easeInOut)
                             ))
                         }
-                        
-                       
                     }
-                    
                 }
             }
-                
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -73,7 +71,6 @@ struct LunchScreen: View {
         }
     }
 }
-
 
 #Preview {
     LunchScreen()

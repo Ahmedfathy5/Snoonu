@@ -7,12 +7,15 @@
 
 import SwiftUI
 import MapKit
+import SwiftfulRouting
 
 struct LocationView: View {
+    
    let myHome = CLLocationCoordinate2D(latitude: 31.07953, longitude: 31.40379)
     @State var textField: String = ""
+    @Environment(\.router) var router
+    
     var body: some View {
-        NavigationStack {
             ZStack {
                 if #available(iOS 17.0, *) {
                     Map() {
@@ -65,11 +68,10 @@ struct LocationView: View {
                                     }
                                 
                                 Button {
-                                    
-                                } label: {
-                                    NavigationLink {
+                                    router.showScreen(.push) { _ in
                                         TabViews()
-                                    } label: {
+                                    }
+                                } label: {
                                        Text("Confirm location")
                                             .font(.title3)
                                             .bold()
@@ -81,22 +83,14 @@ struct LocationView: View {
                                             .opacity(textField.isEmpty ? 0.4 : 1)
                                             .cornerRadius(25)
                                 }
-                                }
-
-                                
-                                
                             }
                             .offset(y: -15)
                         }
                         .frame(height: 200)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                         .ignoresSafeArea()
-                        
                 }
             }
-        }
-        
-     
     }
 }
 

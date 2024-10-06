@@ -61,8 +61,6 @@ struct ResturantDeals: View {
                         }
                     }
                 }
-                
-            
         }
     }
 }
@@ -129,7 +127,7 @@ struct DeliveryArived: View {
 
 #Preview {
     VStack(spacing: 60) {
-        ResturantDeals(width: 370, height: 160)
+        ResturantDeals(width: 370, height: 120)
         PrecentageView(precentage: 30, precentageShow: true)
         Favorite()
         DeliveryArived(minutes: 22)

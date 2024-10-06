@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct CreateAccount: View {
+    
     @State var textField: String = ""
-    @Binding  var showSignInScreen: Bool
     @State private var keyboardHeight: CGFloat = 0
+    @Environment(\.router) var router
+    
     var body: some View {
-            NavigationStack {
+        RouterView { _ in
+            VStack {
                 Text("Login or create an account")
                     .font(.largeTitle)
                     .fontWeight(.black)
@@ -44,10 +48,7 @@ struct CreateAccount: View {
                                 .font(.footnote)
                                 .offset(x: -3 ,y: 1)
                                 .bold()
-                              
                         }
-                        
-                           
                     }
                     
                     Button(action: {}, label: {
@@ -80,25 +81,22 @@ struct CreateAccount: View {
                                 keyboardHeight = keyboardFrame.height - 270
                             }
                         }
-                        
                         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
                             keyboardHeight = 0
                         }
                     }
                     .onDisappear {
                         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-                        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
                     }
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
-                            
-                        } label: {
-                            NavigationLink {
+                            router.showScreen(.push) { _ in
                                 TabViews()
-                            } label: {
+                            }
+                        } label: {
                                 Text("Skip")
                                     .foregroundStyle(.black)
                                     .bold()
@@ -108,15 +106,15 @@ struct CreateAccount: View {
                                             .foregroundStyle(.gray.opacity(0.3))
                                             .cornerRadius(13)
                                     )
-                            }
                         }
                     }
                 }
             }
         }
+        }
     }
 
 
 #Preview {
-    CreateAccount(showSignInScreen: .constant(false))
+    CreateAccount()
 }

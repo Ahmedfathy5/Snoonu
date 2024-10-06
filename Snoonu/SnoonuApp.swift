@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 @main
 struct SnoonuApp: App {
     var body: some Scene {
         WindowGroup {
-            LunchScreen()
+            RouterView { _ in
+                LunchScreen()
+            }
         }
     }
 }

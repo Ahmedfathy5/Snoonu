@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct TabViews: View {
+    
     @State private var selectedTab: Int = 1
     @State private var showSignInScreen: Bool = false
+    @Environment (\.router) var router
+    
     var body: some View {
-       
+        
             TabView(selection: $selectedTab) {
                 Resturants()
                      .tabItem {
@@ -24,7 +28,11 @@ struct TabViews: View {
                         Image(systemName: "window.awning")
                         Text("Grocery") }
                     .tag(2)
-                
+                    .onAppear {
+                        router.showScreen(.fullScreenCover) { _ in
+                            CreateAccount()
+                        }
+                    }
                 
                 AllServies()
                      .tabItem {
@@ -59,15 +67,6 @@ struct TabViews: View {
                 
             }
             .accentColor(.snoonuBackground)
-            .fullScreenCover(isPresented: $showSignInScreen, content: {
-                CreateAccount( showSignInScreen: $showSignInScreen)
-            })
-       
-
-
-        
-
-      
     }
 }
 
