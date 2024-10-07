@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct ResturantItem: View {
     @State var name: String
     
-  
     
-    @StateObject private var imageLoader = ImageLoader()
-        let url: URL
+    
+    let url: URL
+    
     var body: some View {
         
         ZStack {
@@ -21,24 +23,17 @@ struct ResturantItem: View {
                 .foregroundStyle(.white)
                 .frame(width: 100, height: 120)
             VStack {
-                if let image = imageLoader.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70)
-                        .cornerRadius(15)
-                }
-             
+                WebImage(url: url)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70, height: 70)
+                    .cornerRadius(15)
+                
+                
                 Text(name)
                     .font(.system(size: 15))
                     .fontWeight(.bold)
             }
-        }
-        .onAppear{
-            imageLoader.loadImage(from: url)
-        }
-        .onDisappear{
-            imageLoader.cancel()
         }
     }
 }

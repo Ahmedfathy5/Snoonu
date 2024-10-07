@@ -11,6 +11,8 @@
 		0011A1442CA1864E00A7ECCF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1432CA1864E00A7ECCF /* NetworkError.swift */; };
 		0011A1472CA18DA800A7ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1462CA18DA800A7ECCF /* ViewModel.swift */; };
 		0011A1492CA1D34E00A7ECCF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1482CA1D34E00A7ECCF /* ImageLoader.swift */; };
+		001E1F392CB3FCA70095D34F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001E1F382CB3FCA70095D34F /* Color.xcassets */; };
+		001E1F572CB405170095D34F /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E1F562CB405170095D34F /* Shimmer.swift */; };
 		004DFAC62C9B0D2A00E722FC /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DFAC52C9B0D2A00E722FC /* FoodCategory.swift */; };
 		004DFAC82C9B230400E722FC /* ResturantDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DFAC72C9B230400E722FC /* ResturantDeals.swift */; };
 		00501CBD2C8F1A8E00A048AC /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00501CBC2C8F1A8E00A048AC /* TabViews.swift */; };
@@ -28,6 +30,7 @@
 		00EF9B5A2C8E3FAE00200ACB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EF9B592C8E3FAE00200ACB /* Preview Assets.xcassets */; };
 		00EF9B612C8E49CD00200ACB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B602C8E49CD00200ACB /* LocationView.swift */; };
 		00EF9B662C8E537D00200ACB /* CorenerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EF9B652C8E537D00200ACB /* CorenerRadius.swift */; };
+		00F027832CB425A6009525F1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 00F027822CB425A6009525F1 /* SDWebImageSwiftUI */; };
 		00F1DF0A2CA0854200810AE2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1DF092CA0854200810AE2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,8 @@
 		0011A1432CA1864E00A7ECCF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0011A1462CA18DA800A7ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		0011A1482CA1D34E00A7ECCF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		001E1F382CB3FCA70095D34F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		001E1F562CB405170095D34F /* Shimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		004DFAC52C9B0D2A00E722FC /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		004DFAC72C9B230400E722FC /* ResturantDeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantDeals.swift; sourceTree = "<group>"; };
 		00501CBC2C8F1A8E00A048AC /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F027832CB425A6009525F1 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				00EF9B562C8E3FAE00200ACB /* Assets.xcassets */,
+				001E1F382CB3FCA70095D34F /* Color.xcassets */,
 			);
 			path = Recources;
 			sourceTree = "<group>";
@@ -105,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				00501CC92C8F20C900A048AC /* Onboarding */,
-				00501CE42C8F377600A048AC /* Components */,
+				00501CE42C8F377600A048AC /* ReusableView */,
 				0009470C2C93034F00726A03 /* General */,
 				00501CE92C8F7AB500A048AC /* CreateAccount */,
 				00501CBE2C8F1AD400A048AC /* Resturants.swift */,
@@ -126,7 +133,7 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		00501CE42C8F377600A048AC /* Components */ = {
+		00501CE42C8F377600A048AC /* ReusableView */ = {
 			isa = PBXGroup;
 			children = (
 				00501CE52C8F37A900A048AC /* ResturantItem.swift */,
@@ -134,7 +141,7 @@
 				004DFAC52C9B0D2A00E722FC /* FoodCategory.swift */,
 				004DFAC72C9B230400E722FC /* ResturantDeals.swift */,
 			);
-			path = Components;
+			path = ReusableView;
 			sourceTree = "<group>";
 		};
 		00501CE92C8F7AB500A048AC /* CreateAccount */ = {
@@ -197,6 +204,7 @@
 			children = (
 				00F1DF092CA0854200810AE2 /* NetworkManager.swift */,
 				0011A1432CA1864E00A7ECCF /* NetworkError.swift */,
+				001E1F562CB405170095D34F /* Shimmer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -217,6 +225,9 @@
 			dependencies = (
 			);
 			name = Snoonu;
+			packageProductDependencies = (
+				00F027822CB425A6009525F1 /* SDWebImageSwiftUI */,
+			);
 			productName = Snoonu;
 			productReference = 00EF9B4F2C8E3FAD00200ACB /* Snoonu.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 00EF9B462C8E3FAD00200ACB;
+			packageReferences = (
+				00F027812CB425A6009525F1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 00EF9B502C8E3FAD00200ACB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +275,7 @@
 			files = (
 				00EF9B5A2C8E3FAE00200ACB /* Preview Assets.xcassets in Resources */,
 				00EF9B572C8E3FAE00200ACB /* Assets.xcassets in Resources */,
+				001E1F392CB3FCA70095D34F /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +296,7 @@
 				00501CC52C8F1B0300A048AC /* ClubRewards.swift in Sources */,
 				00501CBD2C8F1A8E00A048AC /* TabViews.swift in Sources */,
 				00EF9B552C8E3FAD00200ACB /* LunchScreen.swift in Sources */,
+				001E1F572CB405170095D34F /* Shimmer.swift in Sources */,
 				00EF9B532C8E3FAD00200ACB /* SnoonuApp.swift in Sources */,
 				0011A1472CA18DA800A7ECCF /* ViewModel.swift in Sources */,
 				00501CC12C8F1ADF00A048AC /* Charities.swift in Sources */,
@@ -494,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00F027812CB425A6009525F1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00F027822CB425A6009525F1 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00F027812CB425A6009525F1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00EF9B472C8E3FAD00200ACB /* Project object */;
 }

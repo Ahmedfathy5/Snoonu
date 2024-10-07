@@ -9,9 +9,10 @@ import Foundation
 import Combine
 import UIKit
 
-class ViewModel: ObservableObject {
+final class ViewModel: ObservableObject {
     @Published var dataModel: Resturant
     @Published var images: [String: UIImage] = [:]
+    @Published var isLoading: Bool = false
    
     private var apiManager: ApiManagerType
     var cancelabel = Set<AnyCancellable>()
@@ -22,10 +23,9 @@ class ViewModel: ObservableObject {
     }
     
     func fetchData()  {
-        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian") else {
-            return
-            
-        }
+        
+        defer { isLoading = true }
+        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian") else { return }
         apiManager.fetch(url: url)
             .decode(type: Resturant.self, decoder: JSONDecoder())
             .sink { completion in
@@ -43,9 +43,10 @@ class ViewModel: ObservableObject {
     }
     
     func downloadImages(for meals: [Meals]) {
+        
         for meal in meals {
             guard let imageURL = URL(string: meal.mealImage) else { continue }
-            
+           
             URLSession.shared.dataTask(with: imageURL) { [weak self] data, _, _ in
                 if let data = data, let image = UIImage(data: data) {
                     DispatchQueue.main.async {

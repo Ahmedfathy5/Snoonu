@@ -130,14 +130,25 @@ struct Resturants: View {
     }
     private var resturantCategory: some View {
         LazyVStack {
-            LazyVGrid(columns: columns, alignment: .center, spacing: 0, content: {
-                ForEach(viewModel.dataModel.meals, id: \.self) { item in
-                    if let imageURL = URL(string: item.mealImage) {
-                        ResturantItem(name: item.mealName, url: imageURL)
+            if viewModel.isLoading {
+                LazyVGrid(columns: columns, alignment: .center, spacing: 0) {
+                    ForEach(viewModel.dataModel.meals, id: \.self) { item in
+                        if let imageURL = URL(string: item.mealImage) {
+                            ResturantItem(name: item.mealName, url: imageURL)
+                        }
                     }
-                   
                 }
-            })
+            } else {
+                LazyVGrid(columns: columns, alignment: .center, spacing:6) {
+                    ForEach(0..<10) { _ in
+                        Rectangle()
+                            .frame(width: 90, height: 90)
+                            .foregroundStyle(.gray.opacity(0.5))
+                            .cornerRadius(15)
+                            .shimmering()
+                    }
+                }
+            }
         }
     }
     private var serviceResturants: some View {
@@ -146,15 +157,25 @@ struct Resturants: View {
                 .padding(.horizontal, 5)
             ScrollView(.horizontal) {
                 LazyHStack {
-                    ForEach(viewModel.dataModel.meals, id: \.self) { item in
-                        if let imageURL = URL(string: item.mealImage) {
-                            ResturantItem(name: item.mealName, url: imageURL)
+                    if viewModel.isLoading {
+                        ForEach(viewModel.dataModel.meals, id: \.self) { item in
+                            if let imageURL = URL(string: item.mealImage) {
+                                ResturantItem(name: item.mealName, url: imageURL)
+                            }
+                        }
+                    } else {
+                        HStack {
+                            ForEach(0..<15) { _ in
+                                Rectangle()
+                                    .frame(width: 90, height: 90)
+                                    .foregroundStyle(.gray.opacity(0.5))
+                                    .cornerRadius(15)
+                                    .shimmering()
+                            }
                         }
                     }
                 }
-                
             }
-            
             .scrollIndicators(.hidden, axes: .horizontal)
         }
     }
