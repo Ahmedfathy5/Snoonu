@@ -23,14 +23,13 @@ final class ViewModel: ObservableObject {
     }
     
     func fetchData()  {
-        
-        defer { isLoading = true }
         guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?a=Egyptian") else { return }
         apiManager.fetch(url: url)
             .decode(type: Resturant.self, decoder: JSONDecoder())
             .sink { completion in
                 switch completion {
                 case .finished:
+                    self.isLoading.toggle()
                         break
                 case .failure(let error):
                     print("ther's big error here \(error)")
@@ -40,6 +39,7 @@ final class ViewModel: ObservableObject {
                 print("this is the data \(String(describing: data))")
             }
             .store(in: &cancelabel)
+       
     }
     
     func downloadImages(for meals: [Meals]) {

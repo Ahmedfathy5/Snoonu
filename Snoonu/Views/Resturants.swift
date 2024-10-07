@@ -40,7 +40,9 @@ struct Resturants: View {
             }
             .padding(.horizontal, 3)
             .onAppear {
+                
                 viewModel.fetchData()
+                
             }
         }
         .scrollIndicators(.hidden, axes: .vertical)

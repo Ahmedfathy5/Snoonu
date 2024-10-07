@@ -11,7 +11,7 @@ import SwiftUI
 struct SnoonuApp: App {
     var body: some Scene {
         WindowGroup {
-           TabViews()
+           LunchScreen()
         }
     }
 }

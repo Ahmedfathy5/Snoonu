@@ -50,13 +50,9 @@ struct LunchScreen: View {
                                 removal: AnyTransition.opacity.animation(.easeInOut)
                             ))
                         }
-                        
-                       
                     }
-                    
                 }
             }
-                
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

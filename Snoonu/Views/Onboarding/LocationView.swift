@@ -9,30 +9,32 @@ import SwiftUI
 import MapKit
 
 struct LocationView: View {
-   let myHome = CLLocationCoordinate2D(latitude: 31.07953, longitude: 31.40379)
+    let myHome = CLLocationCoordinate2D(latitude: 31.07953, longitude: 31.40379)
+    
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 31.07953, longitude: -31.40379),
+        span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    )
+    
     @State var textField: String = ""
     var body: some View {
         NavigationStack {
             ZStack {
                 if #available(iOS 17.0, *) {
-                    Map() {
-                       
-                        Marker("Developer's Home",systemImage: "building", coordinate: myHome)
-                            .tint(.blue)
-                    }
+                    Map()
                         .ignoresSafeArea()
                 } else {
-                   
+                    // Fallback on earlier versions
                 }
                 
                 VStack(spacing: -400) {
                     Image(systemName: "location")
                         .font(.title)
                         .background(
-                        Rectangle()
-                            .frame(width: 60, height: 60)
-                            .foregroundStyle(.white)
-                            .cornerRadius(30)
+                            Rectangle()
+                                .frame(width: 60, height: 60)
+                                .foregroundStyle(.white)
+                                .cornerRadius(30)
                         )
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
@@ -70,7 +72,7 @@ struct LocationView: View {
                                     NavigationLink {
                                         TabViews()
                                     } label: {
-                                       Text("Confirm location")
+                                        Text("Confirm location")
                                             .font(.title3)
                                             .bold()
                                             .foregroundColor(.white)
@@ -80,23 +82,17 @@ struct LocationView: View {
                                             )
                                             .opacity(textField.isEmpty ? 0.4 : 1)
                                             .cornerRadius(25)
+                                    }
                                 }
-                                }
-
-                                
-                                
                             }
                             .offset(y: -15)
                         }
                         .frame(height: 200)
                         .frame(maxHeight: .infinity, alignment: .bottom)
                         .ignoresSafeArea()
-                        
                 }
             }
         }
-        
-     
     }
 }
 
