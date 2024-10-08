@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LunchScreen: View {
-    @State var isScaled: Bool = true
+    
+    @State var isScaled: Bool = false
     @State var showNextScreen: Bool = false
     @State var showMessage: Bool = false
+    
     var body: some View {
         Group {
             if showNextScreen {
@@ -57,13 +59,13 @@ struct LunchScreen: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
-                    showMessage = true
+                    showMessage.toggle()
                 }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                 withAnimation {
-                    showNextScreen = true
+                    showNextScreen.toggle()
                 }
             }
         }
