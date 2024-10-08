@@ -22,6 +22,8 @@ final class SnoonuTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        lunchScreen = nil
     }
     
     func test_ViewModel_isLoading_shouldBeFalse() {

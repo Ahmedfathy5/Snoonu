@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		000939882CB550E800473C98 /* SnoonuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000939872CB550E800473C98 /* SnoonuTests.swift */; };
+		0009398F2CB587BC00473C98 /* Network_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009398E2CB587BC00473C98 /* Network_Tests.swift */; };
 		0011A1422CA181E800A7ECCF /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1412CA181E800A7ECCF /* Resturant.swift */; };
 		0011A1442CA1864E00A7ECCF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1432CA1864E00A7ECCF /* NetworkError.swift */; };
 		0011A1472CA18DA800A7ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011A1462CA18DA800A7ECCF /* ViewModel.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		000939852CB550E800473C98 /* SnoonuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnoonuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000939872CB550E800473C98 /* SnoonuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnoonuTests.swift; sourceTree = "<group>"; };
+		0009398E2CB587BC00473C98 /* Network_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network_Tests.swift; sourceTree = "<group>"; };
 		0011A1412CA181E800A7ECCF /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		0011A1432CA1864E00A7ECCF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0011A1462CA18DA800A7ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				000939872CB550E800473C98 /* SnoonuTests.swift */,
+				0009398E2CB587BC00473C98 /* Network_Tests.swift */,
 			);
 			path = SnoonuTests;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0009398F2CB587BC00473C98 /* Network_Tests.swift in Sources */,
 				000939882CB550E800473C98 /* SnoonuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

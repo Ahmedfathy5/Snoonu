@@ -18,6 +18,7 @@ protocol ApiManagerType: AnyObject {
 final class NetworkManager: ApiManagerType {
     
     private var session: URLSession
+    
     init(session: URLSession) {
         self.session = session
     }
