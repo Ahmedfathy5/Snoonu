@@ -15,7 +15,6 @@ struct Resturants: View {
         "food5", "food6", "food7", "food8","food9"
     ]
     @State private var currentIndex = 0
-    @StateObject var viewModel = ViewModel( dataModel: Resturant(meals: [Meals(mealName: "", mealImage: "")]))
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 0),
@@ -23,6 +22,12 @@ struct Resturants: View {
         GridItem(.flexible(), spacing: 0),
         GridItem(.flexible(), spacing: 0)
     ]
+    @StateObject var viewModel: ViewModel
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: ViewModel(dataModel: Resturant(meals: [])))
+    }
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -40,9 +45,7 @@ struct Resturants: View {
             }
             .padding(.horizontal, 3)
             .onAppear {
-                
                 viewModel.fetchData()
-                
             }
         }
         .scrollIndicators(.hidden, axes: .vertical)
