@@ -42,7 +42,6 @@ struct LunchScreen: View {
                                 VStack {
                                     Text("Made in Qatar with love ❤️")
                                         .fontWeight(.semibold)
-                                       
                                 }
                             }
                             .padding()
@@ -57,16 +56,19 @@ struct LunchScreen: View {
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    showMessage.toggle()
-                }
+            startAnimation()
+        }
+    }
+    func startAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                showMessage.toggle()
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                withAnimation {
-                    showNextScreen.toggle()
-                }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            withAnimation {
+                showNextScreen.toggle()
             }
         }
     }
